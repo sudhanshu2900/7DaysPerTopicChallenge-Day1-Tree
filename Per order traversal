@@ -1,0 +1,33 @@
+PROBLEM:
+       1      
+      /          
+    4    
+  /    \   
+4       2
+
+Output: 1 4 4 2
+
+
+SOLUTION:
+
+
+void pre(vector<int> &res, Node* root){
+    if(root==NULL){
+        return;
+    }
+    res.push_back(root->data);
+    pre(res, root->left);
+    pre(res, root->right);
+    
+}
+
+vector <int> preorder(Node* root)
+{
+    vector<int> res;
+    pre(res, root);
+    return res;
+}
+
+
+
+
