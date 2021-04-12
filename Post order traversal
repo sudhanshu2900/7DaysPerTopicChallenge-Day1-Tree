@@ -1,0 +1,33 @@
+PROBLEM: 
+
+        19
+     /     \
+    10      8
+  /    \
+ 11    13
+ 
+Output: 11 13 10 8 19
+
+
+SOLUTION:
+
+
+void post(vector<int> &res, Node* root){
+    if(root==NULL){
+        return;
+    }
+    post(res, root->left);
+    post(res, root->right);
+    res.push_back(root->data);
+}
+
+vector <int> postOrder(Node* root)
+{
+    vector<int> res;
+    post(res, root);
+    return res;
+}
+
+
+
+
